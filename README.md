@@ -1,6 +1,6 @@
 # Password Strength Calculator
 
-**This module insert on terminal the password strength.**
+**The module outputs the password strenght to the terminal.**
 
 # Quickstart
 **Ways to use:**
@@ -9,8 +9,8 @@
 Example of script launch on Linux, Python 3.5:
 
 ```bash
-$ python3 password_strenght.py password
-
+$ python3 password_strenght.py
+Password:password
 Password strength is -0- from 10.
 
 ```
