@@ -4,7 +4,7 @@
 
 # Quickstart
 **Ways to use:**
-- Have to use  module `password_strenght.py` after `python3` with argument `password` in terminal.
+- Have to use  module `password_strenght.py` after `python3` with `password` in terminal.
 
 Example of script launch on Linux, Python 3.5:
 

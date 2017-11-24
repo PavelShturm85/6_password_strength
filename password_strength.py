@@ -8,25 +8,26 @@ def load_data(enter_file):
         return password_file.read()
 
 
-def get_password_strength(psw, black_list):
+def get_password_strength(password, black_list):
     password_strength = 0
     uniqueness_rate = 0.8
-    if black_list.find(psw) != -1:
+    if black_list.find(password) != -1:
         return password_strength
     else:
-        if len(set(psw)) >= len(psw)*uniqueness_rate and len(psw) >= 10:
+        if len(set(password)) >= len(password)*uniqueness_rate \
+           and len(password) >= 10:
             password_strength += 6
 
         upper = set(string.ascii_uppercase)
         lower = set(string.ascii_lowercase)
         digits = set(string.digits)
         punctuation = set(string.punctuation)
-        letters = set(psw)
+        unique_symbols = set(password)
 
         for pattern in (upper, lower, digits, punctuation):
-            if pattern & letters:
+            if pattern & unique_symbols:
                 password_strength += 1
-    return password_strength
+        return password_strength
 
 
 if __name__ == '__main__':
