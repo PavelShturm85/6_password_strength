@@ -11,7 +11,7 @@ def load_data(enter_file):
 def get_password_strength(password, black_list):
     password_strength = 0
     uniqueness_rate = 0.8
-    if black_list.find(password) != -1:
+    if password in black_list:
         return password_strength
     else:
         if len(set(password)) >= len(password)*uniqueness_rate \
@@ -22,10 +22,10 @@ def get_password_strength(password, black_list):
         lower = set(string.ascii_lowercase)
         digits = set(string.digits)
         punctuation = set(string.punctuation)
-        unique_symbols = set(password)
+        set_password = set(password)
 
         for pattern in (upper, lower, digits, punctuation):
-            if pattern & unique_symbols:
+            if pattern & set_password:
                 password_strength += 1
         return password_strength
 
