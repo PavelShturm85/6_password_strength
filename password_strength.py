@@ -5,7 +5,7 @@ from getpass import getpass
 
 def load_data(enter_file):
     with open(enter_file, 'r') as password_file:
-        return password_file.read()
+        return password_file.read().splitlines()
 
 
 def get_password_strength(password, black_list):
@@ -33,6 +33,6 @@ def get_password_strength(password, black_list):
 if __name__ == '__main__':
 
     input_password = getpass()
-    password_black_list = load_data('passwords.txt')
+    forbidden_passwords = load_data('passwords.txt')
     print("Password strength is -{}- from 10.".format(
-        get_password_strength(input_password, password_black_list)))
+        get_password_strength(input_password, forbidden_passwords)))
